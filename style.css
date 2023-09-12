@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    background-color: black;
+}
+.center{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.outer{
+    position: relative;
+    margin: 0 50px;
+    background-color: black;
+}
+.button{
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+}
+.circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.outer button,.outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.outer button{
+    background: black;
+    color: #f2f2f2;
+    z-index: 9;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+}
+.circle button{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+.outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+}
+.outer.button span{
+    border-radius: 50px;
+}
+.outer.circle span{
+    border-radius: 50%;
+}
+.outer:hover span:nth-child(1){
+    filter: blur(7px);
+}
+.outer:hover span:nth-child(2){
+    filter: blur(14px);
+}
+.outer:hover{
+    background: linear-gradient(cyan,yellow, rgb(225, 7, 149));
+    animation: circling 1.5s linear infinite;
+}
+@keyframes circling {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
